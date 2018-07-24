@@ -1,0 +1,134 @@
+/* pages/celebrity/index.wxss */
+.celebrity{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx
+}
+.celebrity-Img{
+  width: 230rpx;
+  height: 340rpx;
+  float: left
+}
+.celebrity-Box{
+  margin-left: 270rpx;
+  height: 340rpx;
+  box-sizing: border-box;
+  padding: 30rpx 0 0
+}
+.celebrity-Name{
+  font-size: 30rpx;
+  font-weight: 600;
+  padding-bottom: 20rpx;
+}
+.celebrity-in{
+  font-size: 26rpx;
+  padding-bottom: 10rpx;
+}
+
+.celebrity-Icon{
+  width: 15%;
+  padding-right: 2%;
+  display: inline-block
+}
+.celebrity-Icon image{
+  width: 100%;
+  height: 100rpx
+}
+.celebrity-Icon:nth-of-type(6n){
+  padding-right: 0
+}
+.photo,.more{
+  margin: 0 20rpx;
+  background: #EAEAEA;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 6rpx
+}
+
+.more{
+  margin-bottom: 40rpx;
+}
+.more view{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  color: #3979BF;
+  display: inline-block
+}
+.more view:last-of-type{
+  color: #D6D6D6;
+  float: right;
+  font-weight: 900;
+  font-size: 36rpx
+}
+
+
+/* works */
+.works{
+  margin: 0 20rpx;
+  background: #EAEAEA;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 6rpx
+}
+.works .celebrity-Img{
+  width: 150rpx;
+  height: 200rpx;
+  float: left
+}
+.works .celebrity-Box{
+  margin-left: 170rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding: 0
+}
+.works .celebrity-Name{
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+  font-weight: 400
+}
+.works .celebrity-in{
+  font-size: 26rpx;
+  color: #A9A9A9
+}
+
+
+.detail-Box{
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 40rpx
+}
+
+.detail-title{
+  font-weight: 600;
+  font-size: 28rpx;
+  border-left: 8rpx #333 solid;
+  line-height: 100%;
+  padding-left: 20rpx;
+  margin: 0 0 20rpx
+}
+
+.detail-des{
+  font-size: 24rpx;
+  text-indent: 2em;
+  line-height: 180%;
+}
+.noBottom{
+  padding-bottom: 0
+}
+.movie-inner{
+  font-size: 24rpx;
+  padding-bottom: 8rpx
+}
+
+.movie-genresIn{
+  display: inline-block;
+  padding: 2rpx 6rpx;
+  color: #666;
+  background: #CDCDCD;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+  border-radius: 8rpx
+}

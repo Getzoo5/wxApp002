@@ -1,0 +1,26 @@
+<view>
+  <view class='mine-top'>
+    <button wx:if='{{!userInfo}}' plain class='mine-imgBtn' open-type='getUserInfo' bindgetuserinfo='login' plain>
+      <image src='/assets/img/132.png'></image>
+    </button>
+    <image wx:else class='mine-img' src='{{userInfo?userInfo.avatarUrl:"https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83erKCWVJSHYVRwNgQyfcV2sdycHeTt8v6eJduqJZR1GMe15ibsYdnnpPsglBynecVxaoFxQAuRicdlNg/132"}}'></image>
+  </view>
+  <view class='mine-box'>
+    <button wx:if='{{!userInfo}}' plain class='mine-nameBtn mine-name' open-type='getUserInfo' bindgetuserinfo='login' plain> 未登录 </button>
+    <view class='mine-name' wx:else>{{userInfo.nickName}}</view>
+    <view class='items'>
+      <wxc-flex class="wrap item">
+        <view class="item" wx:for="{{itemList}}" wx:key="*" bindtap='detail'>
+          <wxc-elip line="1" class="movie-title">
+            <view>{{item.name}}</view>
+            <view class='item-tips' wx:if='{{!userInfo}}'>--</view>
+            <view class='item-tips' wx:else>{{item.tips}}</view>
+          </wxc-elip>
+        </view>
+      </wxc-flex>
+    </view>
+  </view>
+  <view bindtap='closeTabBar' class='closeTabBar'>
+    <image src='/assets/icon/{{closeTabBar?"pull-h":"push-h"}}.png'></image>
+  </view>
+</view>

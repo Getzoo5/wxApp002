@@ -1,0 +1,124 @@
+/* pages/details/detail.wxss */
+.detail-Box{
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 40rpx
+}
+
+.movie-title{
+  width: 100%;
+  font-size: 26rpx;
+  color: #666;
+  text-align: center;
+  display:block;  
+  word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  padding-top: 8rpx
+}
+
+.movie-img{
+  width: 100%;
+  display: block;
+  height: 130px
+}
+.wrap.movie {
+  display: block;
+  padding: 1%;
+}
+.wrap.movie .item {
+  width: 31.33333%;
+  margin: 1%;
+  flex-grow: 0;
+  padding-bottom: 10rpx;
+  background: #fff;
+  box-shadow: 0 0 10rpx 2rpx #dfdfdf;
+}
+
+.movie-name{
+  font-size: 28rpx;
+  line-height: 180%;
+  color: #333;
+  word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  margin-left: -8rpx;
+  margin-bottom: 10rpx;
+  padding-top: 10rpx
+}
+.movie-genresIn{
+  display: inline-block;
+  padding: 2rpx 6rpx;
+  color: #666;
+  background: #CDCDCD;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+  border-radius: 8rpx
+}
+
+.movie-inner{
+  font-size: 24rpx;
+  padding-bottom: 8rpx
+}
+
+.item.main{
+  padding-left: 30rpx
+}
+
+.detail-title{
+  font-weight: 600;
+  font-size: 28rpx;
+  border-left: 8rpx #333 solid;
+  line-height: 100%;
+  padding-left: 20rpx;
+  margin: 0 0 20rpx
+}
+
+.avatars-Box{
+  width: 180rpx;
+  display: inline-block;
+  margin-right: 20rpx
+}
+.avatars-Box view{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 26rpx
+}
+
+.avatars-Box image{
+  width: 100%;
+  display: block
+}
+.noBottom{
+  padding-bottom: 0
+}
+
+.detail-des{
+  font-size: 24rpx;
+  text-indent: 2em;
+  line-height: 180%;
+}
+.video-Box{
+  width: 48%;
+  display: inline-block
+}
+.video-Box:nth-child(2n){
+  margin-right: 4%
+}
+.video-Box image{
+  width: 100%;
+}
+.video-Box view{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  font-size: 26rpx
+}

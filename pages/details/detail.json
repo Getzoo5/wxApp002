@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-flex": "../../packages/@minui/wxc-flex/dist/index"
+  },
+  "navigationBarTitleText": "详 情"
+}

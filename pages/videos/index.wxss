@@ -1,0 +1,4 @@
+/* pages/videos/index.wxss */
+.video{
+  width: 100%;
+}

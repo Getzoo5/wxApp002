@@ -1,0 +1,2 @@
+<!--pages/videos/index.wxml-->
+<video class='video' src='{{src}}' controls></video>

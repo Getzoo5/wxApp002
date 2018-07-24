@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/about/index",
+    "pages/mine/index",
+    "pages/details/detail",
+    "pages/videos/index",
+    "pages/celebrity/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#EAEAEA",
+    "navigationBarBackgroundColor": "#F3F3F3",
+    "navigationBarTitleText": "豆瓣 数据测试",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "电 影",
+        "iconPath": "/assets/icon/movie.png",
+        "selectedIconPath": "/assets/icon/movie_active.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我 的",
+        "iconPath": "/assets/icon/mine.png",
+        "selectedIconPath": "/assets/icon/mine-active.png"
+      }
+    ],
+    "color": "#CDCDCD",
+    "selectedColor": "#2C2C2C"
+  }
+}

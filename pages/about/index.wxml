@@ -1,0 +1,26 @@
+<view>
+    <view class="search-wrap">
+      <wxc-search class="search" showClear="{{false}}" bg-color="rgba(255, 255, 255, 0.18)" color="#808081" icon-color="#808081" ph-color="#808081" placeholder="请输入电影名" _pid="{{_pid}}"></wxc-search>
+    </view>
+    <block wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}">
+      <wxc-panel border="{{false}}" margin="{{false}}" _pid="{{_pid}}">
+        <view class="content">
+          ● {{tab.title}}
+          <wxc-icon class="arrow-right" size="26" color="#666" type="arrow-right" _pid="{{_pid}}"></wxc-icon>
+        </view>
+      </wxc-panel>
+      <wxc-flex class="wrap1" cross="top" wrap="wrap" _pid="{{_pid}}">
+        <view class="item1" wx:for="{{itemList}}">
+          <image mode="widthFix" class="movie-img" src="../../assets/img/p480747492.jpg"></image>
+          <wxc-elip line="1" class="title" _pid="{{_pid}}">《肖申克的救赎》</wxc-elip>
+        </view>
+        <view class="item1 more">
+          <wxc-icon class="moreicon" size="100" color="#666" type="more" _pid="{{_pid}}"></wxc-icon>
+        </view>
+      </wxc-flex>
+    </block>
+    <wxc-loadmore is-end="{{true}}" text="技术支持 GetZoo5" _pid="{{_pid}}"></wxc-loadmore>
+    <view bindtap='closeTabBar' class='closeTabBar'>
+      <image src='/assets/icon/{{closeTabBar?"pull-h":"push-h"}}.png'></image>
+    </view>
+</view>

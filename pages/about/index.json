@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wxc-flex": "../../packages/@minui/wxc-flex/dist/index",
+    "wxc-icon": "../../packages/@minui/wxc-icon/dist/index",
+    "wxc-search": "../../packages/@minui/wxc-search/dist/index",
+    "wxc-panel": "../../packages/@minui/wxc-panel/dist/index",
+    "wxc-loadmore": "../../packages/@minui/wxc-loadmore/dist/index",
+    "wxc-elip": "../../packages/@minui/wxc-elip/dist/index"
+  },
+  "navigationBarTitleText": "电　　影"
+}

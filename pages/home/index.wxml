@@ -1,0 +1,58 @@
+<view>
+  <swiper autoplay="true">
+      <block wx:for="{{imgUrls}}" wx:key="*">
+          <swiper-item style='padding:0;'>
+              <image style='margin-bottom:0;' src="{{item}}" mode="aspectFill" class="slide-image">
+              </image>
+          </swiper-item>
+      </block>
+  </swiper>
+  <view class='Prompt' hidden='{{!isPrompt}}'>
+    <view class='tishi'>提示：</view>
+    <icon class='icon' type="clear" size="16" bindtap='Prompt'></icon> 
+    <view style='overflow:hidden;'>  
+      <view class="example">
+        <view class="marquee_box">
+          <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
+            <text>{{text}}</text>
+            <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;">{{text}}</text>
+          </view>
+        </view>
+      </view> 
+    </view>  
+  </view>
+  <wxc-tab bind:tabchange="onClick" default-index="{{isDefault}}" component-id="c2" animate="{{true}}" text-color="#808081" active-text-color="#000" active-line-color="#000" class="descover-tab" _pid="{{_pid}}">
+      <wxc-tab-panel wx:for="{{tabs}}" wx:key="*" wx:for-item="tab" wx:key="{{tab.content}}" tab-index="{{index}}" component-id="c2" label="{{tab.title}}" _pid="{{_pid}}">
+          <wxc-flex class="wrap book" wx:if="{{tab.id==0||tab.id==5}}" cross="top" wrap="wrap" _pid="{{_pid}}">
+              <view class="item" wx:for="{{itemList}}" wx:key="*" data-id='{{item.id - 0}}' bindtap='detail'>
+                  <image mode="aspectFill" class="movie-img" src="{{item.images.small}}"></image>
+                  <wxc-elip line="1" class="movie-title">《{{item.title}}》</wxc-elip>
+              </view>
+          </wxc-flex>
+          <wxc-flex class="wrap movie" wx:if="{{tab.id==1||tab.id==4}}" cross="top" wrap="wrap" _pid="{{_pid}}">
+              <view class="item" wx:for="{{itemList}}" wx:key="*" data-id='{{item.id}}' bindtap='detail'>
+                  <image mode="aspectFill" class="movie-img" src="{{item.images.small}}"></image>
+                  <wxc-elip line="1" class="movie-title">《{{item.title}}》</wxc-elip>
+              </view>
+          </wxc-flex>
+          <wxc-flex class="wrap lll" wx:for="{{itemList}}" wx:key="*" wx:if="{{tab.id==2 || tab.id==3}}" _pid="{{_pid}}" data-id='{{item.subject.id - 0}}' bindtap='detail'>
+            <view class="item side">
+              <image mode="aspectFill" style='width: 200rpx' class="movie-img" src="{{item.subject.images.small}}"></image>
+            </view>
+            <view class="item main">
+              <view class="movie-name">《{{item.subject.title}}》</view>
+              <view class="movie-inner">又名：《{{item.subject.original_title}}》</view>
+              <view class="movie-inner">导演：{{item.subject.directors[0].name}}</view>
+              <view class="movie-inner">主演：<block wx:for="{{item.subject.casts}}" wx:key="*" wx:for-index="i">{{item.name}}</block></view>
+              <view class="movie-time movie-inner">时长：{{item.subject.durations}}</view>
+              <!-- <view class="movie-inner">上映：<block wx:for="{{item.subject.pubdates}}" wx:key="*" wx:for-index="i">{{item}}</block></view> -->
+              <view class="movie-genres movie-inner">类型：<text class='movie-genresIn' wx:for="{{item.subject.genres}}" wx:key="*" wx:for-index="i">{{item}}</text></view>
+            </view>
+          </wxc-flex>
+      </wxc-tab-panel>
+  </wxc-tab>
+  <view bindtap='closeTabBar' class='closeTabBar'>
+    <image src='/assets/icon/{{closeTabBar?"pull-h":"push-h"}}.png'></image>
+  </view>
+</view>
+<view style='width:100%;height:200rpx'></view>

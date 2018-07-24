@@ -1,0 +1,51 @@
+<view class='detail-Box'>
+  <wxc-flex class="wrap lll">
+    <view class="item side">
+      <image mode="aspectFill" style='width: 200rpx' class="movie-img" src="{{detail.images.medium}}"></image>
+    </view>
+    <view class="item main">
+      <view class="movie-name">《{{detail.title}}》</view>
+      <view class="movie-inner">又名：《{{detail.original_title}}》</view>
+      <view class="movie-inner">导演：<block wx:for="{{detail.directors}}" wx:key="*" wx:for-index="i">{{item.name}} </block> </view>
+      <view class="movie-time movie-inner">时长：{{detail.durations}}</view>
+      <view class="movie-genres movie-inner">类型：<text class='movie-genresIn' wx:for="{{detail.genres}}" wx:key="*" wx:for-index="i">{{item}}</text></view>
+      <view class="movie-inner">上映：{{detail.mainland_pubdate || detail.year}}</view> 
+    </view>
+  </wxc-flex>
+</view>
+<view class='detail-Box noBottom' wx:if='{{detail.casts.length > 0}}'>
+  <view class='detail-title'>主演</view>
+</view>
+<view class='avatars' wx:if='{{detail.casts.length > 0}}'>
+  <scroll-view scroll-x>
+    <view style='width:{{detail.casts.length * 200}}rpx;padding-left:20rpx;padding-bottom:40rpx;padding-top: 20rpx'>
+      <view class='avatars-Box' wx:for="{{detail.casts}}" wx:key="*" wx:for-index="i" data-id='{{item.id}}' bindtap='casts'>
+        <image src='{{item.avatars.medium}}' style='height: 255rpx'></image>
+        <view>{{item.name}}</view>
+      </view>
+    </view> 
+  </scroll-view>
+</view>
+<view class='detail-Box' wx:if='{{detail.tags.length > 0}}'>
+  <view class='detail-title'>标签</view>
+  <view class="movie-inner"><text class='movie-genresIn' wx:for="{{detail.tags}}" wx:key="*" wx:for-index="i">{{item}}</text></view>
+</view>
+<view class='detail-Box'>
+  <view class='detail-title'>剧情介绍</view>
+  <view class='detail-des'>{{detail.summary}}</view>
+</view>
+<view class='detail-Box' wx:if='{{detail.bloopers.length > 0}}'>
+  <view class='detail-title'>花絮</view>
+  <view class='video-Box' wx:for='{{detail.bloopers}}' data-videos='{{item.resource_url}}' bindtap='videos'>
+    <image src='{{item.medium}}' mode='widthFix'></image>
+    <view>{{item.title}}</view>
+  </view>
+</view>
+<view class='detail-Box' wx:if='{{detail.trailers.length > 0}}'>
+  <view class='detail-title'>终极预告</view>
+  <view class='video-Box' wx:for='{{detail.trailers}}' data-videos='{{item.resource_url}}' bindtap='videos'>
+    <image src='{{item.medium}}' mode='widthFix'></image>
+    <view>{{item.title}}</view>
+  </view>
+</view>
+<view style='width:100%;height:200rpx'></view>

@@ -1,0 +1,45 @@
+<view class='celebrity'>
+  <image class='celebrity-Img' src='{{celebrity.avatars.medium}}' mode='aspectFill'></image>
+  <view class='celebrity-Box'>
+    <view class='celebrity-Name'>{{celebrity.name}}</view>
+    <view class='celebrity-in'>{{celebrity.aka_en}}</view>
+    <view class='celebrity-Place celebrity-in'>{{celebrity.born_place}}</view>
+    <view class='celebrity-Born celebrity-in'>{{celebrity.birthday}}</view>
+    <view class='celebrity-Constellation celebrity-in'>{{celebrity.constellation}}</view>
+    <view class='celebrity-Professions celebrity-in'>{{celebrity.professions}}</view>
+  </view>
+</view>
+<view class='detail-Box'>
+  <view class='detail-title'>介绍</view>
+  <view class='detail-des'>{{celebrity.summary}}</view>
+</view>
+<view class='detail-Box noBottom' wx:if='{{celebrity.photos.length > 0}}'>
+  <view class='detail-title'>相册</view>
+</view>
+<view class='photo' wx:if='{{celebrity.photos.length > 0}}'>
+  <block wx:for='{{celebrity.photos}}'>
+    <view class='celebrity-Icon'>
+      <image src='{{item.icon}}' mode='aspectFill'></image>
+    </view>
+  </block>
+</view>
+<navigator class='more' url='' wx:if='{{celebrity.photos.length > 0}}'>
+  <view>浏览全部图片</view>
+  <view>＞</view>
+</navigator>
+<view class='detail-Box noBottom' wx:if='{{celebrity.works.length > 0}}'>
+  <view class='detail-title'>作品</view>
+</view>
+<view class='works' wx:if='{{celebrity.works.length > 0}}' wx:for='{{celebrity.works}}' data-id='{{item.subject.id}}' bindtap='detail'>
+  <image class='celebrity-Img' src='{{item.subject.images.medium}}' mode='aspectFill'></image>
+  <view class='celebrity-Box'>
+    <view class='celebrity-Name'>{{item.subject.title}}</view>
+    <view class='celebrity-in'>{{item.subject.pubdates}}</view>
+    <view class="movie-genres movie-inner"><text class='movie-genresIn' wx:for="{{item.subject.genres}}" wx:key="*" wx:for-index="i">{{item}}</text></view>
+  </view>
+</view>
+<navigator class='more' url='' wx:if='{{celebrity.works.length > 0}}'>
+  <view>浏览全部作品</view>
+  <view>＞</view>
+</navigator>
+<view style='width:100%;height:200rpx'></view>
